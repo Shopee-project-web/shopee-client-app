@@ -36,9 +36,6 @@ function Footer() {
             <p>Liên Hệ Với Truyền Thông</p>
           </div>
 
-
-          {/*<div>*/}
-
           <div>
             <h5>THANH TOÁN</h5>
             <ul className="image-list">
@@ -87,16 +84,14 @@ function Footer() {
             </ul>
 
           </div>
-        {/*</div>*/}
-        <div>
-          <h5>THEO DÕI CHÚNG TÔI TRÊN</h5>
-          <p><FaFacebook className="logo-icon"/>
-            Facebook
-          </p>
-          <p><FaInstagramSquare className="logo-icon"/>Instagram</p>
-          <p><FaLinkedin className="logo-icon"/>LinkedIn</p>
-        </div>
-
+          <div>
+            <h5>THEO DÕI CHÚNG TÔI TRÊN</h5>
+            <p><FaFacebook className="logo-icon"/>
+              Facebook
+            </p>
+            <p><FaInstagramSquare className="logo-icon"/>Instagram</p>
+            <p><FaLinkedin className="logo-icon"/>LinkedIn</p>
+          </div>
 
         </div>
       </div>
