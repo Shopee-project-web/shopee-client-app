@@ -8,13 +8,14 @@ import {Link} from "react-router-dom";
 
 function Header() {
   return (
-
-
     <div className="header">
 
       <div className="container">
         <div className="logo">
-          <img src="/logo-shoppify4.png" alt="Shoppify Logo"/>
+          <Link to="/">
+            <img src="/logo-shoppify4.png" alt="Shoppify Logo"/>
+          </Link>
+
         </div>
 
         <div className="container">
@@ -29,7 +30,6 @@ function Header() {
         </div>
 
         <div className="container">
-
           <div className="user-icon">
             <BiUser/>
             <div className="dropdown">

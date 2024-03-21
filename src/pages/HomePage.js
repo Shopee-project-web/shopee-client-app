@@ -1,8 +1,13 @@
 import React from 'react'
+import ListCategory from "../component/home/ListCategory";
+import ListProduct from "../component/home/ListProduct";
 
 function HomePage() {
   return (
-    <div>HomePage</div>
+    <div>
+      <ListCategory/>
+      <ListProduct/>
+    </div>
   )
 }
 
