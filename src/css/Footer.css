@@ -7,18 +7,30 @@
 
 .container {
     display: flex;
-    justify-content: space-between;
-    /*align-items: center;*/
-    align-items: flex-start; /* Chỉnh các phần tử cùng nằm trên cùng một hàng */
     max-width: 1000px;
-    /*padding: 0 0px;*/
 
+}
+.footer-container {
+    display: flex;
+    /*justify-content: space-between; !* Canh đều các phần tử theo chiều ngang *!*/
+}
+
+.footer-container > div {
+    flex: 1; /* Mỗi phần tử chiếm toàn bộ không gian còn lại */
+    margin-right: 20px; /* Khoảng cách giữa các phần tử */
+}
+
+.footer-container > div:last-child {
+    margin-right: 0; /* Không có khoảng cách bên phải của phần tử cuối cùng */
 }
 
 
 div p {
     color: #4f4e4e; /* Màu chữ xám */
     font-size: 13px;
+}
+.footer h5 {
+    margin-top: 15px;
 }
 
 .image-list {
@@ -46,6 +58,7 @@ div p {
     margin-right: 5px;
     font-size: 18px;
 }
+
 
 
 

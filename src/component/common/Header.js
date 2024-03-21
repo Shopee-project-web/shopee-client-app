@@ -8,8 +8,6 @@ import {Link} from "react-router-dom";
 
 function Header() {
   return (
-
-
     <div className="header">
 
       <div className="container">
@@ -32,7 +30,6 @@ function Header() {
         </div>
 
         <div className="container">
-
           <div className="user-icon">
             <BiUser/>
             <div className="dropdown">
@@ -60,4 +57,3 @@ function Header() {
 }
 
 export default Header
-
