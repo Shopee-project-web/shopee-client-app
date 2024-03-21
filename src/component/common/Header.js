@@ -14,7 +14,10 @@ function Header() {
 
       <div className="container">
         <div className="logo">
-          <img src="/logo-shoppify4.png" alt="Shoppify Logo"/>
+          <Link to="/">
+            <img src="/logo-shoppify4.png" alt="Shoppify Logo"/>
+          </Link>
+
         </div>
 
         <div className="container">
@@ -57,3 +60,4 @@ function Header() {
 }
 
 export default Header
+

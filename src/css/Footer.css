@@ -1,0 +1,51 @@
+/* Footer.css */
+.footer {
+    background-color: #ededed;
+    /*background-color: #10bf51;*/
+    /*padding: 2px;*/
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    /*align-items: center;*/
+    align-items: flex-start; /* Chỉnh các phần tử cùng nằm trên cùng một hàng */
+    max-width: 1000px;
+    /*padding: 0 0px;*/
+
+}
+
+
+div p {
+    color: #4f4e4e; /* Màu chữ xám */
+    font-size: 13px;
+}
+
+.image-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.image-list li {
+    flex: 1;
+    margin-right: 10px; /* Khoảng cách giữa các hình ảnh */
+}
+
+.image-list li:last-child {
+    margin-right: 0; /* Loại bỏ khoảng cách bên phải của hình ảnh cuối cùng */
+}
+
+.image-list img {
+    width: 100%;
+    height: auto;
+}
+
+.logo-icon {
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+
+
