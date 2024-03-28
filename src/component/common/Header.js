@@ -34,10 +34,10 @@ function Header() {
             <BiUser/>
             <div className="dropdown">
               <ul>
-                <li><Link to="/#">Đăng nhập</Link></li>
+                <li><Link to="/auth/login">Đăng nhập</Link></li>
                 <li><Link to="/#">Tài khoản</Link></li>
                 <li><Link to="/#">Đơn mua</Link></li>
-                <li><Link to="/#">Đăng xuất</Link></li>
+                <li><Link to="/auth/logout">Đăng xuất</Link></li>
               </ul>
             </div>
           </div>

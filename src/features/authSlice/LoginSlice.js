@@ -10,11 +10,16 @@ const initialState = {
 }
 
 
-export const loginUser = createAsyncThunk("auth/loginUser",async(userData) => {
+export const loginUser = createAsyncThunk("auth/login",async(userData) => {
     try{
         const response = await userLogin(userData);
         if(response.status === 200){
+            alert("Đăng nhập thành công!")
+            localStorage.setItem("accessToken",response.data.accessToken)
+            console.log(localStorage)
             return response.data;
+        }else{
+            alert ("Đăng nhập thất bại!")
         }
     }catch (e) {
         return e;
