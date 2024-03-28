@@ -3,6 +3,9 @@ import './header.scss'
 import {Link} from "react-router-dom";
 
 function Header() {
+
+  const hasToken = localStorage.getItem("accessToken") !== null;
+
   const filterSearch = [
     {
       id: 1,
@@ -90,8 +93,8 @@ function Header() {
                     alt=""/>
                   <span>Đăng nhập để xem thông báo</span>
                   <div className="header-notice-auth">
-                    <Link to="/register" className="header-notice-register">Đăng ký</Link>
-                    <Link to="/login" className="header-notice-login">Đăng Nhập</Link>
+                    {!hasToken && <Link to="/register" className="header-notice-register">Đăng ký</Link>}
+                    {!hasToken && <Link to="/login" className="header-notice-login">Đăng Nhập</Link>}
                   </div>
                 </div>
               </div>
@@ -100,8 +103,8 @@ function Header() {
                 <a href='https://help.shopee.vn/vn/s/' target="_blank">Hỗ trợ</a>
               </div>
               <div className="header-auth">
-                <Link to="/register"  className="header-register">Đăng Ký</Link>
-                <Link to="/login"  className="header-login">Đăng Nhập</Link>
+                {!hasToken && <Link to="/register" className="header-register">Đăng Ký</Link>}
+                {!hasToken && <Link to="/login" className="header-login">Đăng Nhập</Link>}
               </div>
             </div>
           </div>
