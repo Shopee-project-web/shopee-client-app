@@ -5,6 +5,7 @@ import LoginForm from './LoginForm'
 
 function RegisterForm() {
 
+
   const location = window.location.pathname;
 
   return (
