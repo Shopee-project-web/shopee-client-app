@@ -1,0 +1,459 @@
+@use "../../scss/" as *;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  z-index: 99999;
+  background: linear-gradient(-180deg, #f53d2d, #f63);
+  color: #fff;
+  @include mobile {
+    background: transparent;
+  }
+
+  a {
+    color: $white-color;
+    font-weight: 300;
+    font-size: 1.35rem;
+    line-height: 1.8rem;
+    color: #fff;
+    @include tablet {
+      font-size: 1.1rem;
+    }
+  }
+
+  &-icon-user {
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &-user-mobile {
+    display: flex;
+    justify-content: end;
+  }
+
+  &-right,
+  &-left,
+  &-top {
+    @include flex(center, space-between);
+    gap: 0 3px;
+  }
+  &-top {
+    padding: 7px 0;
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &-left-item {
+    display: flex;
+    > a,
+    .relative {
+      height: 1.6rem;
+      padding: 0 8px;
+      border-right: 2px solid rgba(238, 238, 238, 0.295);
+
+      &:last-child {
+        border-right: none;
+        &:hover {
+          opacity: 1;
+          cursor: text;
+        }
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &-social {
+    display: flex;
+    gap: 0 10px;
+  }
+
+  &-icon {
+    font-size: 1.7rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+  }
+  // right
+  &-right {
+    gap: 0 20px;
+  }
+
+  &-downloadapp {
+    position: absolute;
+    top: 160%;
+    left: 0;
+    z-index: 1;
+    width: 198px;
+    background-color: #fff;
+    display: none;
+    border-radius: 3px;
+    box-shadow: 0 0 6px rgba(121, 121, 121, 0.158);
+  }
+
+  &-notice.relative::before,
+  &-left-item .relative::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &-left-item .relative:hover &-downloadapp {
+    display: block;
+
+    img:hover {
+      cursor: pointer;
+    }
+
+    > img {
+      border-radius: 3px;
+    }
+  }
+
+  &-app {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 15px;
+    padding: 0 12px 10px;
+  }
+
+  &-support,
+  &-notice {
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+  }
+
+  &-notice {
+    .relative:hover &-hover.hover {
+      display: flex;
+    }
+    &-auth {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #eee;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+
+    &-login.mobile {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+
+    &-login,
+    &-register {
+      width: 50%;
+      text-align: center;
+      color: $text-color !important;
+      font-weight: 400 !important;
+      padding: 10px 0;
+      font-size: 1.5rem !important;
+
+      &:hover {
+        color: $primary-color !important;
+        background: rgba(212, 212, 212, 0.534);
+        opacity: none !important;
+      }
+    }
+  }
+
+  &-notice-hover.hover {
+    background: #fff;
+    position: absolute;
+    border-radius: 3px;
+    top: 160%;
+    right: 0;
+    width: 380px;
+    height: 340px;
+    max-height: 340px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    display: none;
+    transform-origin: calc(100% - 30px) top;
+    animation: headerNotifyGrowth ease-in 0.2s;
+    will-change: opacity, transform;
+    z-index: 999;
+
+    &::after {
+      position: absolute;
+      top: -25px;
+      right: 30px;
+      content: "";
+      width: 0;
+      height: 0;
+      border: 15px solid;
+      border-color: transparent transparent #fff transparent;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+
+    span {
+      color: $text-color;
+      padding-top: 20px;
+      font-size: 1.5rem;
+      padding-bottom: 30px;
+      cursor: pointer;
+    }
+  }
+
+  &-auth {
+    display: flex;
+    gap: 0 10px;
+  }
+
+  &-register {
+    padding-right: 10px;
+    border-right: 1px solid rgba(238, 238, 238, 0.295);
+  }
+
+  // main
+  &-main {
+    display: grid;
+    grid-template-columns: 12% 72% 10%;
+    gap: 0 40px;
+    padding-top: 20px;
+
+    .mobile-scroll {
+      padding-top: 16px;
+    }
+
+    @include tablet {
+      padding-top: 3px;
+    }
+
+    @include mobile {
+      grid-template-columns: 80% 8% 8%;
+      gap: 0 10px;
+      padding-top: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .logo-hover:hover {
+      opacity: 1 !important;
+    }
+
+    &-img {
+      cursor: pointer;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &-search {
+      width: 100%;
+
+      &-history {
+        position: absolute;
+        top: 110%;
+        left: 0;
+        right: 70px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 3px;
+        box-shadow: 0 2px 6px rgba(201, 201, 201, 0.589);
+        z-index: 100;
+        display: none;
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          a {
+            font-weight: 400;
+            font-size: 1.5rem;
+            color: $text-color !important;
+            display: block;
+            width: 100%;
+          }
+        }
+
+        img {
+          width: 120px;
+          height: 22px;
+        }
+      }
+
+      &-container {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 3px;
+        padding: 3px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        @include tablet {
+          padding: 2px;
+          overflow: hidden;
+        }
+
+        input {
+          width: 90%;
+          font-size: 1.4rem;
+          outline: none;
+          border: none;
+          padding-left: 15px;
+          &:focus ~ .header-main-search-history {
+            display: block;
+          }
+        }
+        i.fas.fa-search {
+          background-color: $primary-color;
+          font-size: 1.6rem;
+          padding: 10px 20px;
+          border-radius: 3px;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.9;
+          }
+
+          @include tablet {
+            padding: 7px 16px;
+          }
+        }
+      }
+
+      &-filter {
+        display: flex;
+        align-items: center;
+        gap: 0 10px;
+        padding: 4px 0 6px;
+
+        @include mobile {
+          display: none;
+        }
+      }
+
+      &-link {
+        font-size: 1.22rem !important;
+        text-transform: capitalize;
+      }
+    }
+
+    &-cart {
+      margin-top: 14px;
+      margin-left: 26px;
+      @include tablet {
+        text-align: end;
+        margin-top: 8px;
+        margin-left: 0;
+      }
+      a:hover {
+        opacity: 1 !important;
+      }
+      &-icon {
+        font-size: 2.4rem;
+        cursor: pointer;
+        position: relative;
+
+        @include tablet {
+          font-size: 2rem;
+        }
+
+        &:hover .hover {
+          display: flex;
+        }
+      }
+      &-hover.hover {
+        background: #fff;
+        position: absolute;
+        border-radius: 3px;
+        top: 153%;
+        right: -10px;
+        width: 400px;
+        height: 250px;
+        max-height: 250px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        display: none;
+        transform-origin: calc(100% - 30px) top;
+        animation: headerNotifyGrowth ease-in 0.2s;
+        will-change: opacity, transform;
+
+        &::after {
+          position: absolute;
+          top: -25px;
+          right: 5px;
+          content: "";
+          width: 0;
+          height: 0;
+          border: 15px solid;
+          border-color: transparent transparent #fff transparent;
+        }
+
+        img {
+          width: 100px;
+          height: 100px;
+        }
+
+        span {
+          color: $text-color;
+          padding-top: 20px;
+          font-size: 1.5rem;
+          font-weight: 400;
+          cursor: pointer;
+          font-family: "Roboto", sans-serif;
+        }
+      }
+    }
+  }
+}
+
+@media (hover: hover) {
+  .header {
+    a:hover {
+      opacity: 0.8;
+    }
+    &-icon:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes headerNotifyGrowth {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

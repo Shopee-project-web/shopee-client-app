@@ -1,0 +1,52 @@
+@use "./breakpoint" as *;
+.wrapper {
+  max-width: 1600px;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  // overflow: hidden;
+  padding: 0 15px;
+
+  @include mobile {
+    padding: 0;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.margin-top {
+  margin-top: 121px;
+
+  @include tablet {
+    margin-top: 100px;
+  }
+
+  @include mobile {
+    margin-top: 0;
+  }
+}
+
+.btn {
+  min-width: 124px;
+  min-height: 34px;
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  padding: 0 12px;
+  outline: none;
+  cursor: pointer;
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.btn--primary {
+  color: #fff;
+  background-color: #ee4d2d;
+}

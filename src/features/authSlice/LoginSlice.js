@@ -16,7 +16,6 @@ export const loginUser = createAsyncThunk("auth/login",async(userData) => {
         if(response.status === 200){
             alert("Đăng nhập thành công!")
             localStorage.setItem("accessToken",response.data.accessToken)
-            console.log(localStorage)
             return response.data;
         }else{
             alert ("Đăng nhập thất bại!")
