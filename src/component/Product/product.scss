@@ -1,0 +1,320 @@
+@use "../../scss/" as *;
+
+.recommended {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #f5f5f5;
+
+  &-container {
+    background: #fff;
+  }
+
+  &-head {
+    height: 61px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    img {
+      width: 160px;
+    }
+  }
+
+  &-tab {
+    padding: 0 4.5rem;
+    font-size: 1.7rem;
+    color: $primary-color;
+    text-transform: uppercase;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    @include mobile {
+      padding: 0 10px;
+    }
+  }
+
+  &-list {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    display: none;
+
+    @include tablet {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.active {
+      position: relative;
+      display: grid;
+    }
+  }
+
+  &-item {
+    background: #fff;
+    position: relative;
+    border: 1px solid transparent;
+    transition: all 0.2s linear;
+    border-radius: 2px;
+
+    &:hover {
+      &::before,
+      &::after {
+        display: block;
+      }
+
+      position: relative;
+      z-index: 99;
+      transform: translateY(-3px);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 2px;
+      border: 1px solid $primary-color;
+      display: none;
+      margin-top: auto;
+    }
+
+    &::after {
+      position: absolute;
+      content: "Tìm sản phẩm tương tự";
+      bottom: -20px;
+      left: 0;
+      right: 0;
+      background: $primary-color;
+      z-index: 990;
+      text-align: center;
+      width: 100%;
+      color: #fff;
+      font-size: 1.5rem;
+      line-height: 30px;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      display: none;
+      cursor: pointer;
+    }
+
+    &-link {
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        border-top-right-radius: 2px;
+        border-top-left-radius: 2px;
+        object-fit: cover;
+        height: 189.64px;
+        object-fit: cover;
+      }
+    }
+    &-label {
+      display: none;
+    }
+    &-label.sale {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding-top: 2px;
+      width: 36px;
+      height: 32px;
+      background: #fecb31e8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      span:first-child {
+        color: rgb(238, 77, 45);
+        font-size: 12px;
+      }
+      span:last-child {
+        font-size: 12px;
+        color: #fff;
+        text-transform: uppercase;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-color: transparent #fecb31e8;
+        border-style: solid;
+        border-width: 0 18px 4px;
+      }
+    }
+
+    &-ship,
+    &-ship-xu {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &-mall,
+    &-wishlist {
+      position: absolute;
+      top: 7px;
+      left: -4px;
+      color: #fff;
+      font-size: 1.2rem;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+
+        border-left: 4px solid transparent;
+        filter: brightness(60%);
+      }
+    }
+
+    &-mall {
+      padding: 2px 5px;
+      color: rgba(235, 235, 235, 0.733);
+      background: #d0011b;
+
+      &::before {
+        border-top: 4px solid #d0011b;
+      }
+    }
+
+    &-wishlist {
+      padding: 1px 6px;
+      background: $primary-color;
+
+      &::before {
+        border-top: 4px solid $primary-color;
+      }
+    }
+
+    &-sponsor {
+      position: absolute;
+      right: 10px;
+      top: 158px;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: 2px 8px;
+      font-weight: 400;
+      background: rgba(94, 94, 94, 0.651);
+      border-radius: 2px;
+    }
+
+    &-saleup {
+      margin-top: 5px;
+      color: #f69113;
+      display: flex;
+      align-items: center;
+      width: 52px;
+      height: 16px;
+
+      div {
+        background: #f69113;
+        color: #fff;
+      }
+
+      svg {
+        height: 16px;
+      }
+    }
+
+    &-info {
+      padding: 5px 12px 12px;
+      height: 100%;
+      max-height: calc(100% - 215px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &-name {
+      margin: 0;
+      overflow-wrap: break-word;
+      overflow: hidden;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      color: #333;
+      font-size: 12px;
+    }
+
+    &-bottom {
+      padding-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-price {
+      color: $primary-color;
+      font-size: 16px;
+
+      u {
+        font-size: 9px;
+        margin-right: 2px;
+        position: relative;
+        top: -2px;
+      }
+    }
+
+    &-sold {
+      color: rgba(0, 0, 0, 0.54);
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+  }
+
+  .active .line {
+    height: 4px;
+    width: 100%;
+    background: $primary-color;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    transition: all 0.2s linear;
+  }
+
+  &-loadmore {
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 50px;
+    button {
+      width: 380px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.884);
+      border: 1px solid rgb(216, 216, 216);
+      transition: all 0.1s linear;
+
+      @include mobile {
+        width: 200px;
+      }
+
+      &:hover {
+        background: rgba(228, 228, 228, 0.904);
+      }
+    }
+  }
+}

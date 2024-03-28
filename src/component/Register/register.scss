@@ -1,0 +1,239 @@
+@use "../../scss/" as *;
+
+.register {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 0;
+
+    @include mobile {
+      padding: 10px 4px;
+    }
+  }
+
+  .mobile {
+    @include mobile {
+      margin: 0 auto;
+    }
+  }
+
+  &-img {
+    display: flex;
+    align-items: center;
+    gap: 0 30px;
+    h3 {
+      margin-top: 15px;
+      font-size: 2.7rem;
+      font-weight: 400;
+
+      @include mobile {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &-support {
+    @include mobile {
+      margin-top: 18px;
+    }
+  }
+
+  &-support a {
+    color: $primary-color !important;
+    font-size: 1.5rem;
+  }
+
+  &-form {
+    background: $primary-color !important;
+    .container {
+      background: url("https://cf.shopee.vn/file/5569eb9dc7e09e2dbed5315b8f2ea8ba");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 600px;
+      max-width: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+
+      @include mobile {
+        background: unset;
+      }
+
+      form {
+        background: #fff;
+        border-radius: 3px;
+        box-shadow: 0 0 6px rgb(122, 122, 122);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        width: 340px;
+        float: right;
+
+        h3 {
+          font-size: 2.1rem;
+          font-weight: 400;
+          padding-bottom: 34px;
+        }
+
+        input {
+          border: 1px solid $border-color;
+          font-size: 1.4rem;
+          padding: 12px 15px;
+          border-radius: 3px;
+          margin-bottom: 28px;
+        }
+
+        button {
+          height: 40px;
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          opacity: 0.8;
+        }
+
+        .register-or {
+          color: rgb(146, 146, 146);
+          text-transform: uppercase;
+          opacity: 0.8;
+          font-size: 1.1rem;
+          text-align: center;
+          position: relative;
+          font-weight: 400;
+          margin-bottom: 20px;
+          margin-top: 25px;
+
+          &::after,
+          &::before {
+            position: absolute;
+            content: "";
+            width: 40%;
+            transform: translateY(-50%);
+            height: 1.5px;
+            top: 50%;
+            left: 0;
+            background: rgb(207, 207, 207);
+          }
+          &::after {
+            left: unset;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &-type {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 0 10px;
+  }
+
+  &-google,
+  &-apple,
+  &-facebook {
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 0 13px;
+    padding: 10px;
+    color: #fff;
+    &:hover {
+      opacity: 0.8;
+    }
+    i {
+      font-size: 2.2rem;
+    }
+    span {
+      font-size: 1.4rem;
+    }
+  }
+
+  &-facebook {
+    background: #2d83f3;
+  }
+  &-google {
+    background: #5390f5;
+  }
+  &-apple {
+    background: #171717;
+  }
+
+  &-policy {
+    text-align: center;
+    padding: 17px 40px;
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    a {
+      color: $primary-color;
+      cursor: pointer;
+    }
+  }
+
+  &-question {
+    text-align: center;
+    font-size: 1.5rem;
+
+    span {
+      color: $text-color;
+      opacity: 0.4;
+    }
+    a {
+      color: $primary-color;
+    }
+  }
+
+  &-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      color: #18628d;
+      font-size: 1.1rem;
+      margin-top: 7px;
+    }
+  }
+
+  &-login-qr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      margin-top: -40px;
+      display: flex;
+      align-items: center;
+      gap: 0 15px;
+
+      h4 {
+        position: relative;
+        color: #fed54c;
+        font-size: 1.5rem;
+        max-width: 130px;
+        padding: 10px;
+        border: 2px solid #fed54c;
+        background-color: #fefaec;
+
+        &::after {
+          position: absolute;
+          content: "";
+          width: 14px;
+          height: 14px;
+          top: 40%;
+          transform: rotate(45deg);
+          right: -9px;
+          background-color: #333;
+          border-top: 2px solid #fed54c;
+          border-right: 2px solid #fed54c;
+          background-color: #fefaec;
+        }
+      }
+    }
+  }
+}
+
+.mt15 {
+  margin-top: 15px;
+}
