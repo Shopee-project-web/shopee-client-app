@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import "./category.scss"
 import {findCategoryList} from "../../api/categoryAPI";
+
 function Category() {
 
   const [categories, setCategories] = useState([]);
@@ -8,10 +9,11 @@ function Category() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await findCategoryList();
-        setCategories(data);
+        const response = await findCategoryList();
+        setCategories(response);
+        console.log( "Dữ liệu cập nhật thành công như sau:", response)
       } catch (error) {
-        console.error("Error setting categories:", error);
+        console.error("Dữ liệu cập nhật xảy ra lõi:", error);
       }
     };
 

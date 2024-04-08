@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App.jsx'
 import reportWebVitals from './reportWebVitals';
-// import './index.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 
 const container = document.getElementById('root');

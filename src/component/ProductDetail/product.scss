@@ -37,6 +37,23 @@
     }
   }
 
+  &-tab2 {
+    padding: 0 4.5rem;
+    font-size: 1.7rem;
+    color: $primary-color;
+    text-transform: uppercase;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    //cursor: pointer;
+
+    @include mobile {
+      padding: 0 10px;
+    }
+  }
+
   &-list {
     padding-top: 10px;
     display: grid;
@@ -292,6 +309,16 @@
     background: $primary-color;
     position: absolute;
     bottom: 0px;
+    left: 0;
+    transition: all 0.2s linear;
+  }
+
+  .active .line2 {
+    height: 4px;
+    width: 100%;
+    background: $primary-color;
+    position: absolute;
+    top: 0px;
     left: 0;
     transition: all 0.2s linear;
   }
