@@ -1,0 +1,122 @@
+.cart-item-container {
+    display: grid;
+    grid-template-columns: repeat(1, 3fr);
+    gap: 5px;
+    width: 50%; /* 2/3 of the screen width */
+    margin: auto;
+}
+
+/*.total-container{*/
+/*    position: fixed;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    width: 50%;*/
+/*    background-color: #ffffff; !* Điều chỉnh màu nền nếu cần *!*/
+/*    margin: 20px;*/
+/*    font-size: 25px;*/
+/*}*/
+
+.total-container {
+    position: fixed;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    background-color: #ffffff;
+    /*margin: 20px;*/
+    font-size: 25px;
+}
+
+
+.cart-item {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    align-items: center;
+    border: 1px solid #ee4d2d;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #ffffff;
+    &:hover {
+        box-shadow: 0 0 6px rgb(232, 11, 11);
+    }
+}
+
+.checkbox {
+    width: 18px; /* Độ rộng */
+    height: 18px; /* Độ cao */
+    /*border-radius: 50%; !* Làm tròn hình ảnh thành hình tròn *!*/
+    /*grid-column: 1;*/
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0); /* Mặc định không có shadow */
+    transition: box-shadow 0.3s ease; /* Hiệu ứng transition khi hover */
+    justify-content: center;
+
+    &:hover {
+        box-shadow: 0 0 18px rgb(238, 77, 45);
+    }
+
+}
+
+.product-image {
+    grid-column: 2;
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    justify-content: center;
+    text-align: center;
+}
+
+.product-details {
+    /*font-size: 14px;*/
+    /*color: #4a4947;*/
+    /*text-align: center;*/
+    /*grid-column: 3 / span 5;*/
+}
+
+.delete-button {
+    grid-column: 9;
+    background-color: #ee4d2d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    justify-content: center;
+
+    &:hover {
+        box-shadow: 0 0 6px rgb(232, 11, 11);
+    }
+}
+
+.sum-button {
+    background-color: #ee4d2d;
+    color: white;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ee4d2d;
+    &:hover {
+        box-shadow: 0 0 6px rgb(232, 11, 11);
+    }
+}
+
+/*style={{*/
+/*    width: '18px',*/
+/*    height: '16px',*/
+/*    color: "#ffffff",*/
+/*    border: "1px solid #ee4d2d"*/
+/*}}*/
+
+
+.quantity-controls {
+    display: flex;
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+
+}
+
+.product-info1 {
+    text-align: left;
+    font-size: 8px;
+    color: #6b6a69;
+}
+
+.product-info2 {
+    text-align: center;
+    font-size: 14px;
+    color: #464644;
+}

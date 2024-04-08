@@ -1,0 +1,138 @@
+@use "../../scss/" as *;
+.poster {
+  padding-top: 30px;
+
+  @include tabletpro {
+    padding-top: 6px;
+  }
+
+  @include tablet {
+    padding-top: 2px;
+  }
+
+  @include mobile {
+    padding-top: 0;
+  }
+
+  .container {
+    padding: 0;
+  }
+  &-slider {
+    display: grid;
+    grid-template-columns: 65% 34.3%;
+    gap: 0 5px;
+
+    @include mobile {
+      display: block;
+    }
+
+    &-left {
+      border-radius: 3px;
+      overflow: hidden;
+      img {
+        height: 240px;
+        cursor: grabbing;
+        border-radius: 3px;
+        @include mobile {
+          border-radius: 0;
+          height: 190px;
+        }
+      }
+
+      @include mobile {
+        border-radius: 0;
+      }
+    }
+  }
+
+  &-side {
+    @include mobile {
+      display: none;
+    }
+    img {
+      height: 117.5px;
+      border-radius: 3px;
+    }
+  }
+
+  .slick-dots {
+    bottom: 13px;
+
+    li {
+      font-size: 1.3rem;
+      margin: 0;
+
+      button:before {
+        font-size: 12px;
+        color: #fff;
+      }
+
+      &.slick-active button:before {
+        color: $primary-color;
+        opacity: 1;
+      }
+    }
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 35px;
+  }
+
+  .slick-next {
+    right: 14px;
+    top: 48%;
+  }
+  .slick-prev {
+    z-index: 1;
+    left: 0px;
+    top: 48%;
+  }
+
+  .slick-arrow {
+    display: none !important;
+    transition: all 0.3s linear;
+  }
+
+  .slick-slider:hover .slick-arrow {
+    display: block !important;
+  }
+
+  &-service {
+    padding-top: 27px;
+    padding-bottom: 13px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0 10px;
+
+    @include tablet {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px 10px;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      transition: all 0.15s linear;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+
+    img {
+      width: 45px;
+      height: 45px;
+      margin: 0 auto;
+    }
+
+    span {
+      font-size: 1.3rem;
+      text-align: center;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
